@@ -1,0 +1,48 @@
+export const projects = [
+  {
+    id: '01',
+    title: 'FANDOMFITS',
+    subtitle: 'FULL-STACK E-COMMERCE PLATFORM',
+    description: 'A full-stack e-commerce platform designed for browsing products, user authentication, cart management, wishlist functionality, and checkout flow. Features include multi-role access (Admin, Vendor, User), vendor dashboard for product management, responsive frontend, and REST API integration.',
+    category: 'FULL STACK',
+    year: '2024',
+    tags: ['React.js', 'Django', 'Python', 'SQLite3', 'REST API'],
+    image: null,
+    liveUrl: '#',
+  },
+  {
+    id: '02',
+    title: 'COFFEE BLISS',
+    subtitle: 'COFFEE BRAND WEBSITE & BACKEND',
+    description: 'A modern responsive coffee brand website. Focused on clean product presentation, responsive UI, and backend integration. Provides a seamless user experience tailored for e-commerce branding and database-driven content management.',
+    category: 'FULL STACK',
+    year: '2024',
+    tags: ['React.js', 'Django', 'Python', 'SQLite3'],
+    image: null,
+    liveUrl: '#',
+  },
+  {
+    id: '03',
+    title: 'HOTEL KARNA',
+    subtitle: 'RETRO-INSPIRED RESTAURANT WEBSITE',
+    description: 'A retro-inspired single-page website for a restaurant/hotel. Focuses on an attractive landing page, responsive design, modern frontend interactions, and visual storytelling to elevate the brand experience.',
+    category: 'FRONTEND',
+    year: '2024',
+    tags: ['React.js', 'Vite', 'Tailwind CSS', 'Responsive Design'],
+    image: null,
+    liveUrl: '#',
+  },
+  {
+    id: '04',
+    title: 'STUDENT MANAGEMENT SYSTEM',
+    subtitle: 'DATA MANAGEMENT APPLICATION',
+    description: 'A web-based application for managing student information. Focused on robust CRUD operations, server-side functionality, API integration, and database management for scalable data handling.',
+    category: 'BACKEND',
+    year: '2023',
+    tags: ['Python', 'Flask', 'MongoDB', 'CRUD API'],
+    image: null,
+    liveUrl: '#',
+  },
+];
+
+export const filterCategories = ['ALL', 'FULL STACK', 'FRONTEND', 'BACKEND'];

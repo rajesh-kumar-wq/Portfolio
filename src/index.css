@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base layer ── */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply font-jakarta transition-colors duration-300;
+  }
+
+  .dark body {
+    /* handeled by App.jsx wrapper */
+  }
+
+  ::selection {
+    @apply bg-light-text text-white;
+  }
+
+  .dark ::selection {
+    @apply bg-dark-accent text-white;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-light-bg;
+  }
+  .dark ::-webkit-scrollbar-track {
+    @apply bg-dark-bg;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-light-muted rounded-full;
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    @apply bg-dark-muted rounded-full;
+  }
+}
+
+/* ── Component layer ── */
+@layer components {
+  /* Glass navbar */
+  .glass-nav {
+    @apply backdrop-blur-xl border border-light-border/50;
+    background: rgba(236, 236, 236, 0.85);
+  }
+  .dark .glass-nav {
+    @apply border-dark-border/50;
+    background: rgba(20, 20, 25, 0.85);
+  }
+
+  /* Section label */
+  .section-label {
+    @apply font-space text-xs tracking-[0.2em] uppercase text-light-muted;
+  }
+  .dark .section-label {
+    @apply text-dark-muted;
+  }
+
+  /* Section heading */
+  .section-heading {
+    @apply font-playfair font-black text-6xl md:text-7xl lg:text-8xl xl:text-9xl tracking-tight leading-none;
+  }
+
+  /* Expertise card */
+  .expertise-card {
+    @apply bg-white/80 rounded-2xl p-8 border border-light-border/50 transition-all duration-300;
+  }
+  .dark .expertise-card {
+    @apply bg-dark-card/80 border-dark-border/50;
+  }
+  .expertise-card:hover {
+    @apply shadow-lg -translate-y-1;
+  }
+
+  /* Timeline card */
+  .timeline-card {
+    @apply bg-white rounded-2xl p-8 border border-light-border/50 transition-all duration-300;
+  }
+  .dark .timeline-card {
+    @apply bg-dark-card border-dark-border/50;
+  }
+
+  /* Contact card */
+  .contact-link {
+    @apply flex items-center justify-between px-5 py-4 rounded-xl border border-light-border/50 
+           hover:bg-light-text hover:text-white transition-all duration-300;
+  }
+  .dark .contact-link {
+    @apply border-dark-border/50 hover:bg-dark-accent;
+  }
+
+  /* Filter pill */
+  .filter-pill {
+    @apply px-5 py-2.5 rounded-full text-xs font-space font-medium tracking-wider uppercase 
+           border border-light-border/60 cursor-pointer transition-all duration-300
+           hover:bg-light-text hover:text-white hover:border-light-text;
+  }
+  .filter-pill.active {
+    @apply bg-light-text text-white border-light-text;
+  }
+  .dark .filter-pill {
+    @apply border-dark-border/60 text-dark-muted
+           hover:bg-dark-accent hover:text-white hover:border-dark-accent;
+  }
+  .dark .filter-pill.active {
+    @apply bg-dark-accent text-white border-dark-accent;
+  }
+
+  /* Watermark text */
+  .watermark-text {
+    @apply font-playfair font-black text-[12rem] md:text-[16rem] lg:text-[20rem] 
+           leading-none tracking-tight select-none pointer-events-none
+           text-light-border/40;
+  }
+  .dark .watermark-text {
+    @apply text-dark-border/20;
+  }
+
+  /* Grid background pattern */
+  .grid-bg {
+    background-image: 
+      linear-gradient(rgba(209, 213, 219, 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(209, 213, 219, 0.3) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .dark .grid-bg {
+    background-image: 
+      linear-gradient(rgba(42, 42, 53, 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(42, 42, 53, 0.5) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* Stat card */
+  .stat-card {
+    @apply bg-white/60 rounded-xl p-6 border border-light-border/50 text-center;
+  }
+  .dark .stat-card {
+    @apply bg-dark-card/60 border-dark-border/50;
+  }
+}
+
+/* ── Utility layer ── */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

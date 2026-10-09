@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="103" y1="62" x2="1083" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17152F"/>
+      <stop offset="1" stop-color="#26234A"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="322" y1="198" x2="889" y2="683" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#34305E"/>
+      <stop offset="1" stop-color="#242342"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h1200v900H0z"/>
+  <circle cx="950" cy="214" r="223" fill="#8B7CFF" fill-opacity=".1"/>
+  <circle cx="227" cy="693" r="178" fill="#51D6C2" fill-opacity=".08"/>
+  <rect x="270" y="174" width="660" height="493" rx="28" fill="#131326" stroke="#6E689E" stroke-opacity=".55" stroke-width="2"/>
+  <path d="M270 202a28 28 0 0 1 28-28h604a28 28 0 0 1 28 28v50H270v-50Z" fill="#302D51"/>
+  <circle cx="307" cy="213" r="6" fill="#FF8E9B"/>
+  <circle cx="330" cy="213" r="6" fill="#FFC76A"/>
+  <circle cx="353" cy="213" r="6" fill="#64D7B7"/>
+  <rect x="302" y="278" width="146" height="354" rx="16" fill="#211F3B"/>
+  <rect x="324" y="302" width="94" height="12" rx="6" fill="#8B7CFF" fill-opacity=".75"/>
+  <rect x="324" y="346" width="79" height="9" rx="4.5" fill="#767292" fill-opacity=".65"/>
+  <rect x="324" y="377" width="91" height="9" rx="4.5" fill="#767292" fill-opacity=".4"/>
+  <rect x="324" y="408" width="69" height="9" rx="4.5" fill="#767292" fill-opacity=".4"/>
+  <rect x="324" y="439" width="85" height="9" rx="4.5" fill="#767292" fill-opacity=".4"/>
+  <text x="478" y="303" fill="#F2F0FF" font-family="Arial,sans-serif" font-size="22" font-weight="700">Workspace overview</text>
+  <rect x="478" y="326" width="184" height="106" rx="14" fill="url(#panel)" stroke="#615B90" stroke-opacity=".55"/>
+  <rect x="681" y="326" width="216" height="106" rx="14" fill="url(#panel)" stroke="#615B90" stroke-opacity=".55"/>
+  <rect x="498" y="346" width="60" height="8" rx="4" fill="#A8A3C8"/>
+  <rect x="498" y="374" width="92" height="25" rx="7" fill="#E9E6FF"/>
+  <rect x="701" y="346" width="65" height="8" rx="4" fill="#A8A3C8"/>
+  <rect x="701" y="374" width="113" height="25" rx="7" fill="#E9E6FF"/>
+  <rect x="478" y="451" width="419" height="181" rx="14" fill="#262442" stroke="#615B90" stroke-opacity=".55"/>
+  <path d="M505 595h364M505 550h364M505 505h364" stroke="#A5A0C6" stroke-opacity=".14"/>
+  <path d="m520 578 59-36 57 16 64-63 56 20 72-55" stroke="#8B7CFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="828" cy="460" r="4" fill="#63D9C1"/>
+  <text x="106" y="774" fill="#F4F1FF" font-family="Arial,sans-serif" font-size="34" font-weight="700" letter-spacing="6">NOVA BOOK</text>
+  <text x="108" y="817" fill="#AAA5CC" font-family="Arial,sans-serif" font-size="15" letter-spacing="4">BUSINESS DASHBOARD</text>
+</svg>

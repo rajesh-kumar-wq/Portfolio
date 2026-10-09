@@ -33,7 +33,7 @@ export default function ScrollIndicator() {
               <Archive size={12} />
               <div>
                 <p className="font-space text-[10px] tracking-[0.15em] uppercase font-medium">SELECTED WORKS</p>
-                <p className="font-space text-[9px] tracking-[0.12em] uppercase opacity-60">VOL. 2024 — 2026 ARCHIVE</p>
+                <p className="font-space text-[9px] tracking-[0.12em] uppercase opacity-60">PYTHON FULL STACK</p>
               </div>
             </div>
           </div>

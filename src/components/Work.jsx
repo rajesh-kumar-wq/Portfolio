@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Sparkles, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { projects, filterCategories } from '../data/projects';
 
 const fadeUpVariant = {
@@ -78,27 +78,12 @@ export default function Work() {
               <div className="relative group">
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 
                                 dark:from-dark-card dark:to-dark-bg border border-light-border/50 dark:border-dark-border/50">
-                  {/* Placeholder project preview */}
-                  <div className="w-full h-full flex items-center justify-center">
-                    <div className="text-center p-8">
-                      <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-light-text/5 dark:bg-dark-text/5 flex items-center justify-center">
-                        <span className="font-playfair font-black text-2xl text-light-muted dark:text-dark-muted">
-                          {project.id}
-                        </span>
-                      </div>
-                      <p className="font-space text-xs tracking-[0.15em] text-light-muted dark:text-dark-muted uppercase">
-                        PROJECT PREVIEW
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                {/* Active preview badge */}
-                <div className="absolute bottom-4 left-4">
-                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 dark:bg-dark-card/90 
-                                   backdrop-blur-sm text-xs font-space font-medium tracking-wider border border-light-border/50 dark:border-dark-border/50">
-                    <Sparkles size={12} className="text-amber-500" />
-                    ACTIVE PREVIEW
-                  </span>
+                  <img
+                    src={project.image}
+                    alt={`${project.title} project cover illustration`}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
                 </div>
               </div>
 
@@ -111,10 +96,6 @@ export default function Work() {
                   <div className="flex items-center gap-3 ml-auto">
                     <span className="font-space text-xs tracking-[0.15em] text-light-muted dark:text-dark-muted uppercase">
                       {project.category}
-                    </span>
-                    <span className="text-light-border dark:text-dark-border">/</span>
-                    <span className="font-space text-xs tracking-[0.15em] text-light-muted dark:text-dark-muted">
-                      {project.year}
                     </span>
                   </div>
                 </div>
@@ -143,15 +124,23 @@ export default function Work() {
                   ))}
                 </div>
 
-                {/* View project link */}
-                <a
-                  href={project.liveUrl}
-                  className="inline-flex items-center gap-2 font-space text-xs tracking-[0.15em] uppercase
-                             hover:text-light-muted dark:hover:text-dark-accent transition-colors group"
-                >
-                  VIEW PROJECT
-                  <ExternalLink size={12} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </a>
+                {project.links.length > 0 && (
+                  <div className="flex flex-wrap gap-x-6 gap-y-3">
+                    {project.links.map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 font-space text-xs tracking-[0.15em] uppercase
+                                   hover:text-light-muted dark:hover:text-dark-accent transition-colors group"
+                      >
+                        {link.label}
+                        <ExternalLink size={12} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                      </a>
+                    ))}
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}

@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Calendar, MapPin, ChevronRight } from 'lucide-react';
-import { workExperience, education, honors } from '../data/timeline';
+import { workExperience, education } from '../data/timeline';
 
 const fadeUpVariant = {
   hidden: { opacity: 0, y: 40 },
@@ -64,37 +64,6 @@ function TimelineEntry({ entry, index }) {
   );
 }
 
-function HonorEntry({ honor, index }) {
-  return (
-    <motion.div
-      variants={fadeUpVariant}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: '-50px' }}
-      custom={index}
-      className="timeline-card"
-    >
-      <div className="flex flex-col md:flex-row md:items-start md:gap-8">
-        <div className="mb-4 md:mb-0">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-space font-medium tracking-wider">
-            <Calendar size={12} />
-            {honor.date}
-          </span>
-        </div>
-        <div>
-          <h3 className="font-playfair font-black text-xl tracking-tight mb-1">{honor.title}</h3>
-          <p className="font-space text-[10px] tracking-[0.2em] text-light-muted dark:text-dark-muted uppercase mb-3">
-            {honor.subtitle}
-          </p>
-          <p className="font-jakarta text-sm leading-relaxed text-light-muted dark:text-dark-muted">
-            {honor.description}
-          </p>
-        </div>
-      </div>
-    </motion.div>
-  );
-}
-
 export default function Timeline() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
@@ -118,7 +87,7 @@ export default function Timeline() {
         >
           <p className="section-label flex items-center gap-2 mb-6">
             <span className="w-2 h-2 rounded-full bg-light-text dark:bg-dark-accent inline-block" />
-            SECTION 04 / CAREER, EDUCATION & HONORS
+            SECTION 04 / EXPERIENCE & EDUCATION
           </p>
         </motion.div>
 
@@ -139,7 +108,7 @@ export default function Timeline() {
             custom={2}
             className="font-space text-xs tracking-[0.15em] text-light-muted dark:text-dark-muted uppercase max-w-sm text-right"
           >
-            CHRONOLOGICAL LEDGER OF WORK EXPERIENCE, ACADEMIC DEGREES & AWARDS
+            EXPERIENCE AND ACADEMIC HISTORY
           </motion.p>
         </div>
 
@@ -171,18 +140,6 @@ export default function Timeline() {
           </div>
         </div>
 
-        {/* Honors */}
-        <div>
-          <p className="section-label flex items-center gap-2 mb-8">
-            <span className="w-2 h-2 rounded-full bg-amber-400 inline-block" />
-            HONORS & RECOGNITION
-          </p>
-          <div className="space-y-6">
-            {honors.map((honor, i) => (
-              <HonorEntry key={i} honor={honor} index={i} />
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

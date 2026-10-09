@@ -12,7 +12,7 @@ const fadeUpVariant = {
 };
 
 const stats = [
-  { value: '4+', label: 'COMPLETED PROJECTS' },
+  { value: '4', label: 'SELECTED PROJECTS' },
   { value: 'B.Sc.', label: 'COMPUTER SCIENCE' },
   { value: '2025', label: 'GRADUATION YEAR' },
   { value: '10+', label: 'CORE TECH STACK' },
@@ -57,7 +57,7 @@ export default function About() {
           <p className="font-space text-xs tracking-[0.2em] text-amber-400 mb-6">// PROFESSIONAL SUMMARY</p>
           <div className="border-l-2 border-amber-400 pl-8 md:pl-12">
             <p className="font-jakarta text-xl md:text-2xl lg:text-3xl leading-relaxed text-dark-text/90 font-light">
-              "I am a passionate Python Full Stack Developer and a B.Sc. Computer Science graduate with hands-on experience building responsive and scalable web applications, including a 3-month internship at NIM Technologies. I specialize in integrating robust backend logic with Django and Python alongside dynamic, user-friendly frontend interfaces using React.js and Tailwind CSS."
+              "I am an early-career Python Full Stack Developer and B.Sc. Computer Science graduate focused on building practical web applications. I work with Python, Django, REST API development, React.js, and database integration, and enjoy connecting reliable backend functionality with responsive, user-friendly interfaces."
             </p>
           </div>
         </motion.div>

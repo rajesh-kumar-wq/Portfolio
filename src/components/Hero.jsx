@@ -42,7 +42,7 @@ export default function Hero() {
             </span>
           </div>
           <p className="font-space text-xs tracking-[0.12em] text-light-muted dark:text-dark-muted uppercase">
-            CHENNAI, TAMIL NADU - INDIA
+            OPEN TO JUNIOR & FRESHER ROLES
           </p>
         </motion.div>
       </div>
@@ -108,9 +108,11 @@ export default function Hero() {
           RAJESH KUMAR R.
         </h1>
 
+        <p className="font-space text-sm md:text-base font-bold tracking-[0.16em] uppercase mb-4 text-light-text dark:text-dark-accent">
+          Python Full Stack Developer
+        </p>
         <p className="font-jakarta text-sm md:text-base text-light-muted dark:text-dark-muted max-w-xl mx-auto mb-10 px-6">
-          Entry-Level Full Stack Developer with 3 months of internship experience at NIM Technologies.
-           Building responsive, scalable web applications using Python, Django, and React.js.
+          Early-career developer building practical web applications with Python, Django, REST APIs, React.js, and database integrations.
         </p>
 
         {/* CTA Buttons */}

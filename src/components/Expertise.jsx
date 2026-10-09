@@ -13,8 +13,10 @@ const iconMap = {
 const iconColors = {
   'SK-01': { bg: 'bg-blue-500/10', text: 'text-blue-400' },
   'SK-02': { bg: 'bg-emerald-500/10', text: 'text-emerald-400' },
-  'SK-03': { bg: 'bg-amber-500/10', text: 'text-amber-400' },
-  'SK-04': { bg: 'bg-violet-500/10', text: 'text-violet-400' },
+  'SK-03': { bg: 'bg-violet-500/10', text: 'text-violet-400' },
+  'SK-04': { bg: 'bg-amber-500/10', text: 'text-amber-400' },
+  'SK-05': { bg: 'bg-cyan-500/10', text: 'text-cyan-400' },
+  'SK-06': { bg: 'bg-rose-500/10', text: 'text-rose-400' },
 };
 
 const fadeUpVariant = {
@@ -97,7 +99,7 @@ export default function Expertise() {
 
                 {/* Technologies */}
                 <p className="font-space text-[10px] tracking-[0.2em] text-dark-muted uppercase mb-4">
-                  CORE TECHNOLOGIES & CONCEPTS
+                  SKILLS & TECHNOLOGIES
                 </p>
                 <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
                   {item.technologies.map((tech) => (

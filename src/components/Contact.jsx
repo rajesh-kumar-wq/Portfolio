@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Clock, ExternalLink, FileText, Send } from 'lucide-react';
+import { Clock, ExternalLink, FileText, Mail, Phone, Send } from 'lucide-react';
 
 const fadeUpVariant = {
   hidden: { opacity: 0, y: 40 },
@@ -37,7 +37,7 @@ function LiveClock() {
       <Clock size={14} className="text-amber-500" />
       <div>
         <p className="font-space text-[9px] tracking-[0.2em] text-light-muted dark:text-dark-muted uppercase">
-          LOCAL TIME / KANYAKUMARI, IN
+          LOCAL TIME / INDIA
         </p>
         <p className="font-space font-bold text-sm tracking-wide">{time}</p>
       </div>
@@ -49,22 +49,6 @@ export default function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSent, setIsSent] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    // Placeholder for form submission backend
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSent(true);
-      setFormData({ name: '', email: '', message: '' });
-      setTimeout(() => setIsSent(false), 3000);
-    }, 1500);
-  };
-
   const GithubIcon = ({ size }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
@@ -82,8 +66,13 @@ export default function Contact() {
 
   const socialLinks = [
     { label: 'GITHUB', icon: GithubIcon, href: 'https://github.com/rajesh-kumar-wq' },
-    { label: 'LINKEDIN', icon: LinkedinIcon, href: 'https://www.linkedin.com/in/rajesh-kumar-1011r' },
+    { label: 'LINKEDIN', icon: LinkedinIcon, href: 'https://linkedin.com/in/rajesh-kumar-1011r' },
     { label: 'RESUME', icon: FileText, href: '/Python Full Stack.pdf' },
+  ];
+
+  const contactDetails = [
+    { label: 'EMAIL', value: 'rajesh0327r@gmail.com', icon: Mail, href: 'mailto:rajesh0327r@gmail.com' },
+    { label: 'PHONE', value: '+91 9080788945', icon: Phone, href: 'tel:+919080788945' },
   ];
 
   return (
@@ -141,7 +130,7 @@ export default function Contact() {
               SOMETHING GREAT.
             </h3>
             <p className="font-jakarta text-base text-dark-muted leading-relaxed max-w-md mb-12">
-              Looking for an entry-level Python Full Stack Developer? I am currently accepting opportunities to collaborate on web development and backend engineering roles.
+              I am open to junior and fresher-level Python Full Stack Developer opportunities. Reach me through email or phone, or explore my work and profiles below.
             </p>
             
             {/* Social links */}
@@ -156,7 +145,7 @@ export default function Contact() {
                     <a
                       key={link.label}
                       href={link.href}
-                      target="_blank"
+                      target={link.href.startsWith('/') ? undefined : '_blank'}
                       rel="noopener noreferrer"
                       className="contact-link group"
                     >
@@ -170,68 +159,83 @@ export default function Contact() {
                 })}
               </div>
             </div>
+
+            <div className="flex flex-col gap-4 mt-10 max-w-md">
+              <p className="font-space text-[10px] tracking-[0.2em] text-dark-muted uppercase mb-2">
+                DIRECT CONTACT
+              </p>
+              {contactDetails.map((detail) => {
+                const IconComponent = detail.icon;
+                return (
+                  <a
+                    key={detail.label}
+                    href={detail.href}
+                    target={detail.href.startsWith('https://') ? '_blank' : undefined}
+                    rel="noopener noreferrer"
+                    className="contact-link group"
+                  >
+                    <div className="flex items-center gap-4">
+                      <IconComponent size={18} />
+                      <div>
+                        <span className="block font-space text-[10px] tracking-[0.15em] text-dark-muted mb-1">{detail.label}</span>
+                        <span className="font-jakarta text-sm break-all">{detail.value}</span>
+                      </div>
+                    </div>
+                    <ExternalLink size={12} className="opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                  </a>
+                );
+              })}
+            </div>
           </motion.div>
 
-          {/* Right — Contact Form */}
+          {/* Right — Message form */}
           <motion.div
             variants={fadeUpVariant}
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
             custom={3}
           >
-            <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-              <p className="font-space text-[10px] tracking-[0.2em] text-dark-muted uppercase mb-2">
+            <form onSubmit={(event) => event.preventDefault()} className="flex flex-col gap-5 rounded-2xl border border-dark-border/60 bg-dark-card/30 p-6 md:p-8">
+              <p className="font-space text-[10px] tracking-[0.2em] text-dark-muted uppercase mb-1">
                 SEND A MESSAGE (COMING SOON)
               </p>
-              
               <div className="flex flex-col gap-2">
-                <label htmlFor="name" className="font-space text-xs text-dark-muted uppercase">Name</label>
+                <label htmlFor="contact-name" className="font-space text-xs text-dark-muted uppercase">Name</label>
                 <input
-                  id="name"
+                  id="contact-name"
                   type="text"
-                  required
                   disabled
-                  value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  className="bg-dark-card/50 border border-dark-border/50 rounded-xl px-5 py-4 font-jakarta text-sm focus:outline-none focus:border-amber-400 transition-colors opacity-70"
-                  placeholder="John Doe"
+                  className="bg-dark-card/50 border border-dark-border/50 rounded-xl px-5 py-4 font-jakarta text-sm opacity-70"
+                  placeholder="Your name"
                 />
               </div>
-              
               <div className="flex flex-col gap-2">
-                <label htmlFor="email" className="font-space text-xs text-dark-muted uppercase">Email</label>
+                <label htmlFor="contact-email" className="font-space text-xs text-dark-muted uppercase">Email</label>
                 <input
-                  id="email"
+                  id="contact-email"
                   type="email"
-                  required
                   disabled
-                  value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  className="bg-dark-card/50 border border-dark-border/50 rounded-xl px-5 py-4 font-jakarta text-sm focus:outline-none focus:border-amber-400 transition-colors opacity-70"
-                  placeholder="john@example.com"
+                  className="bg-dark-card/50 border border-dark-border/50 rounded-xl px-5 py-4 font-jakarta text-sm opacity-70"
+                  placeholder="you@example.com"
                 />
               </div>
-              
               <div className="flex flex-col gap-2">
-                <label htmlFor="message" className="font-space text-xs text-dark-muted uppercase">Message</label>
+                <label htmlFor="contact-message" className="font-space text-xs text-dark-muted uppercase">Message</label>
                 <textarea
-                  id="message"
-                  required
+                  id="contact-message"
                   disabled
                   rows={4}
-                  value={formData.message}
-                  onChange={(e) => setFormData({...formData, message: e.target.value})}
-                  className="bg-dark-card/50 border border-dark-border/50 rounded-xl px-5 py-4 font-jakarta text-sm focus:outline-none focus:border-amber-400 transition-colors resize-none opacity-70"
+                  className="bg-dark-card/50 border border-dark-border/50 rounded-xl px-5 py-4 font-jakarta text-sm resize-none opacity-70"
                   placeholder="How can we work together?"
                 />
               </div>
-
               <button
                 type="submit"
-                disabled={true}
-                className="mt-4 flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-amber-400/50 text-dark-bg font-space font-bold text-xs tracking-wider uppercase opacity-70 cursor-not-allowed transition-colors"
+                disabled
+                className="mt-2 flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-amber-400/50 text-dark-bg font-space font-bold text-xs tracking-wider uppercase opacity-70 cursor-not-allowed"
               >
                 <span>COMING SOON</span>
+                <Send size={14} />
               </button>
             </form>
           </motion.div>

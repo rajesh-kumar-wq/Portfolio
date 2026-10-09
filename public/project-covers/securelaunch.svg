@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="90" y1="72" x2="1090" y2="830" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0C1830"/>
+      <stop offset="1" stop-color="#102B3B"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="443" y1="218" x2="763" y2="690" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#34D399"/>
+    </linearGradient>
+    <filter id="glow" x="335" y="143" width="535" height="646" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="25"/>
+    </filter>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h1200v900H0z"/>
+  <path stroke="#8DD8E8" stroke-opacity=".12" d="M0 150h1200M0 300h1200M0 450h1200M0 600h1200M0 750h1200M150 0v900M300 0v900M450 0v900M600 0v900M750 0v900M900 0v900M1050 0v900"/>
+  <circle cx="600" cy="454" r="222" fill="#34D399" fill-opacity=".1" filter="url(#glow)"/>
+  <path d="M600 208 778 276v139c0 126-76 226-178 278-102-52-178-152-178-278V276l178-68Z" fill="#0A1728" stroke="url(#shield)" stroke-width="12"/>
+  <path d="M600 260 731 310v105c0 94-53 170-131 215-78-45-131-121-131-215V310l131-50Z" fill="#132C3B" stroke="#9DE9D0" stroke-opacity=".45" stroke-width="3"/>
+  <path d="m541 445 42 42 83-94" stroke="#68E3B4" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="600" cy="454" r="245" stroke="#69D8CC" stroke-opacity=".2" stroke-width="2"/>
+  <circle cx="600" cy="454" r="279" stroke="#69D8CC" stroke-opacity=".1" stroke-width="2" stroke-dasharray="5 13"/>
+  <path d="M94 746h1012" stroke="#A8D6E1" stroke-opacity=".2"/>
+  <circle cx="122" cy="790" r="7" fill="#48D6B1"/>
+  <text x="148" y="799" fill="#E8F7F5" font-family="Arial,sans-serif" font-size="31" font-weight="700" letter-spacing="6">SECURELAUNCH</text>
+  <text x="150" y="839" fill="#8BAEBA" font-family="Arial,sans-serif" font-size="15" letter-spacing="4">APPLICATION SECURITY</text>
+</svg>
